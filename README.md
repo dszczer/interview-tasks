@@ -1,2 +1,7 @@
-# interview-tasks
-Aggregate repository for all interview tasks I've done in my entire career
+# Interview Tasks
+
+Aggregate repository for my interview tasks.
+
+## How to navigate
+
+Browse branches of this repository to see each recruitment task separately. Each branch will have its own README.md file with task description.
