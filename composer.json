@@ -1,0 +1,21 @@
+{
+  "name": "kodkod/interview-tasks-evaluation-process",
+  "description": "The task is to implement the business domain logic associated with the evaluation process.",
+  "minimum-stability": "stable",
+  "license": "GPL-3.0-only",
+  "authors": [
+    {
+      "name": "Damian Szczerbiński",
+      "email": "kodkod.damian.szczerbinski@gmail.com",
+      "role": "Evaluated PHP Developer for the interview"
+    },
+    {
+      "name": "Codete Global HQ",
+      "email": "mail@codete.com",
+      "role": "Author of the task"
+    }
+  ],
+  "require": {
+    "php": ">8.1"
+  }
+}

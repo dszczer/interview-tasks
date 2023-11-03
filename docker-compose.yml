@@ -1,0 +1,14 @@
+services:
+  phpunit:
+    container_name: phpunit
+    image: jitesoft/phpunit:8.2
+    environment:
+      - "XDEBUG_MODE=coverage"
+    volumes:
+      - "./:/app"
+      - "./var/log:/var/log/xdebug.log"
+  composer:
+    container_name: composer
+    image: composer/composer:latest
+    volumes:
+      - "./:/app"

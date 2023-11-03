@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd"
+        colors="true"
+        requireCoverageMetadata="true"
+        failOnRisky="true"
+        beStrictAboutChangesToGlobalState="true"
+        beStrictAboutOutputDuringTests="true"
+        beStrictAboutTodoAnnotatedTests="true"
+        beStrictAboutCoverageMetadata="true"
+>
+    <coverage cacheDirectory="var/cache">
+        <report>
+            <html outputDirectory="var/log"/>
+            <clover outputFile="var/log/clover.xml"/>
+        </report>
+    </coverage>
+    <testsuites>
+        <testsuite name="Coding Standards Test Suite">
+            <directory>tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <junit outputFile="var/log/junit.xml"/>
+        <testdoxHtml outputFile="var/log/testdox.html"/>
+        <testdoxText outputFile="var/log/testdox.txt"/>
+    </logging>
+    <source>
+        <include>
+            <directory>src</directory>
+        </include>
+    </source>
+</phpunit>
