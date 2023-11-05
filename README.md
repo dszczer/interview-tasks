@@ -35,9 +35,10 @@ process based on the description below.
 18. If Client has an active assessment, the newly obtained assessment replaces the current one.
 19. Subsequent evaluation may be conducted after a period of not less than 180 days for evaluation completed with a positive result and 30 days for evaluation completed with a negative result.
 
+
 ## Local Test Run
 
-### Tools
+### Requirements
 
 [Docker with Docker Compose *v2*](https://docs.docker.com/get-docker/) **OR** locally installed:
 
@@ -47,11 +48,24 @@ process based on the description below.
 
 ### Install
 
-Install composer packages using `docker compose run --rm composer install`.
+*All commands below assume, that You run them in the main project directory*.
+
+* **Docker option:**
+    1. Install docker compose, using instructions from the hyperlink above.
+    2. Install composer packages using `docker compose run --rm composer install`.
+* **Local tools option:**
+    1. Install PHP, either using your Linux/Windows distribution or download code and compile it from the hyperlink above.
+    2. Install PHP Composer and PHPUnit PHAR files according to instructions included in hyperlinks above, into the main project directory.
+    3. Install composer packages using `php composer.phar install`.
 
 ### Test
 
-Run tests using `docker compose run --rm phpunit`.
+Run tests using:
+* If you've followed **Docker option** installation steps: `docker compose run --rm phpunit`.
+* If you've followed **Local tools option** installation steps: `php phpunit.phar`.
+
+**NOTE:** `phpunit.xml` file contains runtime configuration, so there is no need to pass it to the command.
+
 
 ## Contributors of README
 
