@@ -7,6 +7,11 @@ services:
     volumes:
       - "./:/app"
       - "./var/log:/var/log/xdebug.log"
+  phpstan:
+    container_name: phpstan
+    image: ghcr.io/phpstan/phpstan:latest-php8.2
+    volumes:
+      - "./:/app"
   composer:
     container_name: composer
     image: composer/composer:latest
