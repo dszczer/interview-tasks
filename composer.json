@@ -1,6 +1,7 @@
 {
   "name": "kodkod/interview-tasks-evaluation-process",
   "description": "The task is to implement the business domain logic associated with the evaluation process.",
+  "type": "portfolio",
   "minimum-stability": "stable",
   "license": "GPL-3.0-only",
   "authors": [
@@ -15,6 +16,16 @@
       "role": "Author of the task"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "\\Kodkod\\InterviewTask\\EvaluationProcess\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "\\Kodkod\\InterviewTask\\EvaluationProcess\\Test\\": "tests/"
+    }
+  },
   "require": {
     "php": ">8.1"
   }

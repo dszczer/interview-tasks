@@ -9,6 +9,7 @@
         beStrictAboutOutputDuringTests="true"
         beStrictAboutTodoAnnotatedTests="true"
         beStrictAboutCoverageMetadata="true"
+        cacheDirectory="var/cache"
 >
     <coverage cacheDirectory="var/cache">
         <report>
@@ -17,8 +18,8 @@
         </report>
     </coverage>
     <testsuites>
-        <testsuite name="Coding Standards Test Suite">
-            <directory>tests/Unit</directory>
+        <testsuite name="Unit Tests">
+            <directory>tests/Kodkod/InterviewTask/EvaluationProcess/Test/Unit</directory>
         </testsuite>
     </testsuites>
     <logging>
