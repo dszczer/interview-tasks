@@ -10,6 +10,7 @@
         beStrictAboutTodoAnnotatedTests="true"
         beStrictAboutCoverageMetadata="true"
         cacheDirectory="var/cache"
+        bootstrap="vendor/autoload.php"
 >
     <coverage cacheDirectory="var/cache">
         <report>
@@ -19,7 +20,7 @@
     </coverage>
     <testsuites>
         <testsuite name="Unit Tests">
-            <directory>tests/Kodkod/InterviewTask/EvaluationProcess/Test/Unit</directory>
+            <directory>tests/Unit</directory>
         </testsuite>
     </testsuites>
     <logging>
