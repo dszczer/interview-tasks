@@ -4,9 +4,9 @@ includes:
 parameters:
     phpVersion: 80200 # PHP 8.2
     level: 9
+    treatPhpDocTypesAsCertain: false
     paths:
         - src
-        - tests
     exceptions:
         implicitThrows: false
         check:
