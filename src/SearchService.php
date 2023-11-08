@@ -19,7 +19,7 @@ class SearchService
     /**
      * Implementation of: Return 3 random movie titles.
      *
-     * @return Movie[]
+     * @return Generator<Movie>
      */
     public function getRandom(int $amount = self::RANDOM_DEFAULT): Generator
     {
@@ -48,7 +48,7 @@ class SearchService
     /**
      * Implementation of: Return all titles starting with *W* letter, but if amount of title's character is even only.
      *
-     * @return Movie[]
+     * @return Generator<Movie>
      */
     public function getStartingWithWAndEvenOnly(): Generator
     {
@@ -60,7 +60,7 @@ class SearchService
     /**
      * Implementation of: Return all titles which contains more than one word.
      *
-     * @return Movie[]
+     * @return Generator<Movie>
      */
     public function getAllWithMultipleTitleWords(): Generator
     {

@@ -10,6 +10,7 @@ use Kodkod\InterviewTask\MovieRecommendation\Filter;
 
 use function count;
 use function dirname;
+use function is_array;
 use function mb_strlen;
 use function preg_split;
 use function str_starts_with;
@@ -71,11 +72,16 @@ class MovieRepository
                 $filterConditionsMet &= 0 === mb_strlen($movie->getTitle()) % 2;
             }
             if (null !== $filter->getTitleHasMinWords()) {
-                $numOfWords = count(preg_split('/ /u', $movie->getTitle(),flags: PREG_SPLIT_NO_EMPTY));
-                $filterConditionsMet &= $numOfWords >= $filter->getTitleHasMinWords();
+                $split = preg_split('/ /u', $movie->getTitle(), flags: PREG_SPLIT_NO_EMPTY);
+                if (is_array($split)) {
+                    $numOfWords = count($split);
+                    $filterConditionsMet &= $numOfWords >= $filter->getTitleHasMinWords();
+                } else {
+                    $filterConditionsMet = 0;
+                }
             }
 
-            if ($filterConditionsMet) {
+            if (0 < $filterConditionsMet) {
                 yield $movie;
             }
         }
