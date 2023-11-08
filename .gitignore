@@ -1,2 +1,13 @@
 # IDE
 /.idea
+
+# Cache
+/var/cache
+!/var/cache/.gitkeep
+
+# Logs
+/var/log
+!/var/log/.gitkeep
+
+# Vendor packages
+/vendor

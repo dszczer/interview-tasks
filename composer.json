@@ -1,0 +1,41 @@
+{
+  "name": "kodkod/interview-tasks-movie-recommendation-search",
+  "description": "The task is to implement business domain logic associated with movie recommendation search feature.",
+  "type": "project",
+  "minimum-stability": "stable",
+  "keywords": ["interview", "portfolio", "phpunit", "docker", "movie", "recommendation", "search"],
+  "homepage": "https://github.com/kodkod/interview-tasks/tree/task/movie-recommendation-search/main",
+  "license": "GPL-3.0-only",
+  "authors": [
+    {
+      "name": "Damian Szczerbiński",
+      "email": "kodkod.damian.szczerbinski@gmail.com",
+      "role": "Evaluated PHP Developer for the interview"
+    },
+    {
+      "name": "Morele.net Sp. z o.o.",
+      "role": "Author of the task",
+      "homepage": "https://www.morele.net/"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "phpstan/phpstan-phpunit": "^1.3",
+    "phpstan/phpstan-strict-rules": "^1.5",
+    "fakerphp/faker": "^1.23"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kodkod\\InterviewTask\\MovieRecommendation\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kodkod\\InterviewTask\\MovieRecommendation\\Test\\": "tests/"
+    }
+  }
+}
