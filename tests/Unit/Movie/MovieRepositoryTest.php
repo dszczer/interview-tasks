@@ -22,7 +22,6 @@ final class MovieRepositoryTest extends TestCase
     private const FIXTURE_MOVIES_ENTRY_COUNT = 85;
 
     private MovieService|MockObject $movieServiceMock;
-    private readonly array $movieFixture;
 
     protected function setUp(): void
     {
@@ -51,7 +50,7 @@ final class MovieRepositoryTest extends TestCase
     }
 
     #[Test]
-    public function nonEmptyMoviewsPassedToConstructor(): void
+    public function nonEmptyMoviesPassedToConstructor(): void
     {
         $passedMovies = [
             $this->createMock(Movie::class),
