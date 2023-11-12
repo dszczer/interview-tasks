@@ -46,7 +46,7 @@ The task is to implement API for simple employee allowance for any employee of a
 * Simultaneously, employee can attend single delegation only.
 * Allowance is granted only, if employee was delegated full 8 hours of a specific day.
 * Allowance is not granted for Saturday and Sunday.
-* If allowance takes more than 7 calendar days, then allowance wage doubles for each day, after first 7 calendar days.
+* If delegation takes more than 7 calendar days, then allowance rate doubles for each day after first 7 calendar days.
 
 ### Endpoints
 
@@ -94,29 +94,20 @@ The task is to implement API for simple employee allowance for any employee of a
 
 ### Requirements
 
-[Docker with Docker Compose *v2*](https://docs.docker.com/get-docker/) **OR** locally installed:
-
-* [PHP *v8.1 or higher*](https://www.php.net/downloads.php),
-* [PHP composer v2](https://getcomposer.org/download/),
-* [PHPUnit *v10.x*](https://phpunit.de/getting-started/phpunit-10.html).
+[Docker with Docker Compose *v2*](https://docs.docker.com/get-docker/)
 
 ### Install
 
 *All commands below assume, that You run them in the main project directory*.
 
-* **Docker option:**
-    1. Install docker compose, using instructions from the hyperlink above.
-    2. Install composer packages using `docker compose run --rm composer install`.
-* **Local tools option:**
-    1. Install PHP, either using your Linux/Windows distribution or download code and compile it from the hyperlink above.
-    2. Install PHP Composer and PHPUnit PHAR files according to instructions included in hyperlinks above, into the main project directory.
-    3. Install composer packages using `php composer.phar install`.
+1. Install docker compose, using instructions from the hyperlink above.
+2. Install composer packages: `docker compose run --rm composer install`.
+3. Build API server: `docker compose build api`.
+4. Start Database container: `docker compose up -d database`.
 
 ### Test
 
-Run tests using:
-* If you've followed **Docker option** installation steps: `docker compose run --rm phpunit`.
-* If you've followed **Local tools option** installation steps: `php phpunit.phar`.
+Run tests using `docker compose run --rm phpunit`.
 
 **NOTE:** `phpunit.xml` file contains runtime configuration, so there is no need to pass it to the command.
 
