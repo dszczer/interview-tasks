@@ -70,7 +70,7 @@ The task is to implement API for simple employee allowance for any employee of a
     "currency": "PLN"
   },
   {
-    "start": "2020-04-24 28:00:00",
+    "start": "2020-04-24 08:00:00",
     "end": "2020-04-28 16:00:00",
     "country": "DE",
     "amount_due": 150,
