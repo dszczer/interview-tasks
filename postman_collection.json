@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "83365be6-9300-4de3-b86a-696e55fcb967",
+		"name": "Employee Allowance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19449655"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/employee",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Employee",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost/employee",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Nov 2023 11:46:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Delegations of Employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/delegation/list?employeeId=1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"delegation",
+						"list"
+					],
+					"query": [
+						{
+							"key": "employeeId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Delegations of Employee",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost/delegation/list?employeeId=1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"delegation",
+								"list"
+							],
+							"query": [
+								{
+									"key": "employeeId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Nov 2023 13:07:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"start\": \"2020-04-20 08:00:00\",\n        \"end\": \"2020-04-21 16:00:00\",\n        \"country\": \"PL\",\n        \"amountDue\": 20,\n        \"currency\": \"PLN\"\n    },\n    {\n        \"start\": \"2020-04-24 08:00:00\",\n        \"end\": \"2020-04-28 16:00:00\",\n        \"country\": \"DE\",\n        \"amountDue\": 150,\n        \"currency\": \"PLN\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Delegation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"start\": \"2020-04-24 08:00:00\",\r\n    \"end\": \"2020-04-28 16:00:00\",\r\n    \"employee_id\": 1,\r\n    \"country\": \"DE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/delegation",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"delegation"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Delegation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"start\": \"2020-04-20 08:00:00\",\r\n    \"end\": \"2020-04-21 16:00:00\",\r\n    \"employee_id\": 1,\r\n    \"country\": \"PL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/delegation",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"delegation"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Nov 2023 13:00:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7\n}"
+				}
+			]
+		}
+	]
+}

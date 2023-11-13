@@ -1,0 +1,70 @@
+services:
+  phpunit:
+    container_name: phpunit
+    image: jitesoft/phpunit:8.2
+    environment:
+      - "XDEBUG_MODE=coverage"
+    volumes:
+      - "./:/app"
+      - "./var/log:/var/log/xdebug.log"
+  phpstan:
+    container_name: phpstan
+    image: ghcr.io/phpstan/phpstan:latest-php8.2
+    volumes:
+      - "./:/app"
+  composer:
+    container_name: composer
+    image: composer/composer:latest
+    volumes:
+      - "./:/app"
+  cli:
+    container_name: cli
+    build:
+      dockerfile_inline: |
+        FROM php:8.2-cli
+        RUN apt-get update && apt-get install -y libpq-dev \
+          && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+          && docker-php-ext-install pdo pdo_pgsql pgsql
+    working_dir: "/usr/src/myapp/bin"
+    entrypoint: [ "php" ]
+    volumes:
+      - "./:/usr/src/myapp"
+  api:
+    container_name: api
+    build:
+      dockerfile_inline: |
+        FROM php:8.2
+        RUN apt-get update && apt-get install -y libpq-dev \
+          && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+          && docker-php-ext-install pdo pdo_pgsql pgsql
+    restart: unless-stopped
+    depends_on:
+      - database
+    working_dir: "/usr/src/myapp/public"
+    command: [ "php", "-S", "0.0.0.0:80" ]
+    ports:
+      - "80:80"
+    volumes:
+      - "./:/usr/src/myapp"
+###> doctrine/doctrine-bundle ###
+  database:
+    container_name: database
+    image: postgres:${POSTGRES_VERSION:-15}-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    ports:
+      - "58182:5432"
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
+
+volumes:
+###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###
