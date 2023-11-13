@@ -105,7 +105,7 @@ The task is to implement API for simple employee allowance for any employee of a
 1. Install docker compose, using instructions from the hyperlink above.
 2. Install composer packages: `docker compose run --rm composer install`. 
 3. Start API container: `docker compose up -d api`.
-4. Run database migration: `docker compose run -rm cli console doctrine:migrations:migrate`.
+4. Run database migration: `docker compose run --rm cli console doctrine:migrations:migrate`.
 
 
 ### Test
