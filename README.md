@@ -31,7 +31,7 @@ The task is to implement API for simple employee allowance for any employee of a
 >     * DE: 50 PLN,
 >     * GB: 75 PLN.
 > * Data rozpoczęcia delegacji nie może być późniejsza niż data zakończenia delegacji.
-> * Jednocześnie, pracownik może przebywać tylko na jednej delegacji.
+> * ~~Jednocześnie, pracownik może przebywać tylko na jednej delegacji.~~
 > * Dieta za dzień należy się tylko wtedy, gdy pracownik w danym dniu przebywa minimum 8 godzin w delegacji.
 > * Za sobotę i niedzielę nie należy się dieta.
 > * Jeżeli delegacja trwa więcej niż 7 dni kalendarzowych, to wtedy stawka diety za każdy dzień następujący po 7 dniu kalendarzowym jest podwójna.
@@ -43,10 +43,12 @@ The task is to implement API for simple employee allowance for any employee of a
     * DE: 50 PLN,
     * GB: 75 PLN.
 * Start date of the delegation cannot be later than end date.
-* Simultaneously, employee can attend single delegation only.
+* ~~Simultaneously, employee can attend single delegation only~~.
 * Allowance is granted only, if employee was delegated full 8 hours of a specific day.
 * Allowance is not granted for Saturday and Sunday.
 * If delegation takes more than 7 calendar days, then allowance rate doubles for each day after first 7 calendar days.
+
+**NOTE**: Run out of time to write customized validator for the struck requirement.
 
 ### Endpoints
 
@@ -101,17 +103,25 @@ The task is to implement API for simple employee allowance for any employee of a
 *All commands below assume, that You run them in the main project directory*.
 
 1. Install docker compose, using instructions from the hyperlink above.
-2. Install composer packages: `docker compose run --rm composer install`.
-3. Build API server: `docker compose build api`.
-4. Start Database container: `docker compose up -d database`.
+2. Install composer packages: `docker compose run --rm composer install`. 
+3. Start API container: `docker compose up -d api`.
+4. Run database migration: `docker compose run -rm cli console doctrine:migrations:migrate`.
+
 
 ### Test
+
+#### Automated
 
 Run tests using `docker compose run --rm phpunit`.
 
 **NOTE:** `phpunit.xml` file contains runtime configuration, so there is no need to pass it to the command.
 
 **NOTE:** code coverage and static analysis report can be seen at neat web page `var/log/index.html`.
+
+#### Manual
+
+Due to limited time I was not able to complete functional and integration tests. Those need to be performed manually using API defined in the task description.
+You can help yourself with provided Postman Collection JSON file in the mail directory.
 
 
 ## Contributors of README
