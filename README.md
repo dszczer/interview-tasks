@@ -63,7 +63,7 @@ Task "Currency exchange":
 
 [Docker with Docker Compose *v2*](https://docs.docker.com/get-docker/) **OR** locally installed:
 
-* [PHP *v8.1 or higher*](https://www.php.net/downloads.php),
+* [PHP *v8.1 or v8.2*](https://www.php.net/downloads.php),
 * [PHP composer v2](https://getcomposer.org/download/),
 * [PHPUnit *v10.x*](https://phpunit.de/getting-started/phpunit-10.html).
 
