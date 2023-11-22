@@ -1,0 +1,13 @@
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+parameters:
+    phpVersion: 80200 # PHP 8.2
+    level: 9
+    treatPhpDocTypesAsCertain: false
+    paths:
+        - src
+    exceptions:
+        implicitThrows: false
+        check:
+            tooWideThrowType: true
